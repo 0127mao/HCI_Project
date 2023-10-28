@@ -1,5 +1,12 @@
 <template>
   <div class="body">
+    <h1 class="ml1">
+    <span class="text-wrapper">
+      <span class="line line1"></span>
+      <span class="letters">Book && Book</span>
+      <span class="line line2"></span>
+    </span>
+    </h1>
   <div class="container" :class="{ 'right-panel-active': isRightPanelActive }">
     <!-- 注册 -->
     <div class="container__form container--signup">
@@ -40,8 +47,40 @@
 </template>
 
 <script>
+import anime from "animejs";
 
 export default {
+  mounted() {
+    var textWrapper = document.querySelector('.ml1 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml1 .letter',
+        scale: [0.3,1],
+        opacity: [0,1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 600,
+        delay: (el, i) => 70 * (i+1)
+      })
+      .add({
+        targets: '.ml1 .line',
+        scaleX: [0,1],
+        opacity: [0.5,1],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=875',
+        delay: (el, i, l) => 80 * (l - i)
+      })
+      .add({
+        targets: '.ml1',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  },
   data() {
     var validatePass = (value) => {
       return value !== '';
@@ -171,6 +210,41 @@ export default {
 </script>
 
 <style>
+/*浮动字体*/
+.ml1 {
+  font-weight: 900;
+  font-size: 3.5em;
+  position: relative;
+}
+
+.ml1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml1 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -85%);
+}
+
+.ml1 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 0 0;
+}
+
+.ml1 .line1 { top: 0; }
+.ml1 .line2 { bottom: 0; }
 /* 样式代码 */
 :root {
   /* COLORS */
@@ -191,7 +265,7 @@ export default {
   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .body{
-  align-items: center;
+  //align-items: center;
   background-color: var(--white);
   background: url("../../Images/blue_cloud.jpg");
   background-attachment: fixed;
@@ -200,7 +274,7 @@ export default {
   background-size: cover;
   display: grid;
   height: 100vh;
-  place-items: center;
+  //place-items: center;
 }
 .form__title {
   font-weight: 300;
@@ -223,7 +297,10 @@ export default {
   height: 500px;
   max-width: 800px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
 }
 
