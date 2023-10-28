@@ -11,7 +11,6 @@ import Maps from '@/pages/Maps.vue';
 import Notifications from '@/pages/Notifications.vue';
 import Upgrade from '@/pages/Upgrade.vue';
 import Login from "@/pages/Login/Login.vue";
-import Register from "@/pages/Register/Register.vue";
 import { Message } from "element-ui";
 
 Vue.use(VueRouter);
@@ -25,10 +24,6 @@ const routes = [
   {
     path: '/Login',
     component: Login,
-  },
-  {
-    path: '/Register',
-    component: Register,
   },
   {
     path: '/admin',
