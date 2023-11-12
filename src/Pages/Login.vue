@@ -131,7 +131,7 @@ export default {
                         // 将用户信息存储到sessionStorage中
                         sessionStorage.setItem("userInfo", JSON.stringify(res.data.data));
                         // 跳转页面到首页
-                        this.$router.push('/home');
+                        this.$router.push('/admin/overview');
                         // 显示后端响应的成功信息
                         this.$message({
                             message: res.data.msg,
@@ -298,7 +298,7 @@ export default {
     max-width: 800px;
     overflow: hidden;
     position: fixed;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;

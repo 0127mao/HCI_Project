@@ -4,6 +4,9 @@ import HomeView from '../views/HomeView.vue'
 import Login from "@/Pages/Login.vue";
 import All_pages from "@/Pages/All_pages.vue";
 import AboutView from "@/views/AboutView.vue";
+import Author from "@/Pages/Author.vue";
+import Self from "@/Pages/Self.vue";
+import Help from "@/Pages/Help.vue";
 
 Vue.use(VueRouter)
 
@@ -49,13 +52,18 @@ const routes = [
       {
         path: 'author',
         name: 'Author',
-        component: HomeView
+        component: Author
       },
       {
         path:'self',
         name:'Self',
-        component: AboutView
+        component: Self
       },
+      {
+        path: 'help',
+        name: 'Help',
+        component: Help
+      }
     ]
   }
 ]
