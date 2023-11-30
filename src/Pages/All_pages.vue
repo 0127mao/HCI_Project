@@ -5,9 +5,7 @@
       <nav class="fixed-nav">
         <ul>
           <li>
-            <router-link class="link" to="/admin/overview"
-              >Overview</router-link
-            >
+            <router-link class="link" to="/admin/overview">Overview</router-link>
           </li>
           <li>
             <router-link class="link" to="/admin/library">Library</router-link>
@@ -16,8 +14,8 @@
             <router-link class="link" to="/admin/author">Authors</router-link>
           </li>
           <li><router-link class="link" to="/admin/self">Self</router-link></li>
-            <li><router-link class="link" to="/admin/help">Help</router-link></li>
-            <li><router-link class="link" to="/login">LogOut</router-link></li>
+          <li><router-link class="link" to="/admin/help">Help</router-link></li>
+          <li><router-link class="link" to="/login">LogOut</router-link></li>
         </ul>
       </nav>
       <router-link to="/admin/self"

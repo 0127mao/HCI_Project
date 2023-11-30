@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from "@/Pages/Login.vue";
 import All_pages from "@/Pages/All_pages.vue";
 import AboutView from "@/views/AboutView.vue";
+import LibraryView from "@/views/LibraryView.vue"
 import Author from "@/Pages/Author.vue";
 import Self from "@/Pages/Self.vue";
 import Help from "@/Pages/Help.vue";
@@ -47,7 +48,7 @@ const routes = [
       {
         path: 'library',
         name:'Library',
-        component: AboutView
+        component: LibraryView
       },
       {
         path: 'author',
