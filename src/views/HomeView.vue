@@ -1,27 +1,27 @@
 <template>
     <div>
-    <div class="container_home">
+        <div class="container_home">
         <span class="recommend_one">
             <div>
                 <h1>编辑力荐</h1>
             </div>
             <div class="item_first">
-                <div class="product-thumb">
-                    <img src="https://img1.doubanio.com/view/subject/l/public/s29053580.jpg" alt="img">
+                <div class="product-thumb-one">
+                    <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                 </div>
-                <div class="product-content">
+                <div class="product-one-content">
                     <h3>活着 余华著</h3>
                     <!-- <h4><span>$75.28</span><span class="old">$89.50</span></h4> -->
-                    <h6>《活着(新版)》讲述了农村人福贵悲惨的人生遭遇。福贵本是个阔少爷，可他嗜赌如命，终于赌光了家业，一贫如洗。他的父亲被他活活气死，母亲则在穷困中患了重病，福贵前去求药，却在途中被国民党抓去当壮丁...
-                    </h6>
+                    <h5>《活着(新版)》讲述了农村人福贵悲惨的人生遭遇。福贵本是个阔少爷，可他嗜赌如命，终于赌光了家业，一贫如洗。他的父亲被他活活气死，母亲则在穷困中患了重病，福贵前去求药，却在途中被国民党抓去当壮丁...
+                    </h5>
                 </div>
             </div>
         </span>
-        <span class="recommend_items">
+            <span class="recommend_items">
             <div class="product-items">
                 <div class="item">
                     <div class="product-thumb">
-                        <img src="https://img1.doubanio.com/view/subject/l/public/s1070959.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content text-center">
                         <h3>红楼梦 [清]曹雪芹著</h3>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="item">
                     <div class="product-thumb">
-                        <img src="https://img1.doubanio.com/view/subject/l/public/s27237850.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>百年孤独 [哥伦比亚]加西亚·马尔克斯</h3>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="item">
                     <div class="product-thumb">
-                        <img src="https://img1.doubanio.com/view/subject/l/public/s1078958.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>飘 [美国]玛格丽特·米切尔</h3>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="item">
                     <div class="product-thumb">
-                        <img src="https://img1.doubanio.com/view/subject/l/public/s2347590.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>动物农场 [英]乔治·奥威尔</h3>
@@ -73,7 +73,7 @@
                 <div class="item">
 
                     <div class="product-thumb">
-                        <img src="https://img1.doubanio.com/view/subject/l/public/s24514468.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>白夜行 [日]东野圭吾 </h3>
@@ -85,7 +85,7 @@
                 <div class="item">
 
                     <div class="product-thumb">
-                        <img src="https://img2.doubanio.com/view/subject/l/public/s1103152.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>小王子 [法]圣埃克苏佩里 </h3>
@@ -97,7 +97,7 @@
                 <div class="item">
 
                     <div class="product-thumb">
-                        <img src="https://img9.doubanio.com/view/subject/l/public/s34099286.jpg" alt="img">
+                        <img src="https://img2.doubanio.com/view/subject/l/public/s1076932.jpg" alt="img">
                     </div>
                     <div class="product-content">
                         <h3>呐喊 鲁迅著</h3>
@@ -108,46 +108,47 @@
                 </div>
             </div>
         </span>
-    </div>
-    <div class="author_introduction">
-        <h2>著名作家</h2>
-        <div class="authors">
-            <div class="author_item">
-                <img src="https://img1.doubanio.com/view/personage/raw/public/e7089994c679a68abdce02bcbc85eeb0.jpg">
-                <div class="author_short">
-                    <h6>余华，1960年4月3日生于浙江杭州，现代作家</h6>
+        </div>
+        <div class="author_introduction">
+            <h2>著名作家</h2>
+            <div class="authors">
+                <div class="author_item">
+                    <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg" alt="img">
+                    <div class="author_short">
+                        <h6>余华，1960年4月3日生于浙江杭州，现代作家</h6>
+                    </div>
                 </div>
-            </div>
-            <div class="author_item">
-                <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg">
-                <div class="author_short">
-                    <h6>Eric Arthur Blair (25 June 1903 – 21 January 1950)</h6>
-                </div>
+                <div class="author_item">
+                    <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg" alt="img">
+                    <div class="author_short">
+                        <h6>Eric Arthur Blair (25 June 1903 – 21 January 1950)</h6>
+                    </div>
 
-            </div>
-            <div class="author_item">
-                <img src="https://img1.doubanio.com/view/celebrity/raw/public/p25000.jpg">
-                <div class="author_short">
-                    <h6>东野圭吾，日本推理小说家。</h6>
                 </div>
+                <div class="author_item">
+                    <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg" alt="img">
+                    <div class="author_short">
+                        <h6>东野圭吾，日本推理小说家。</h6>
+                    </div>
 
-            </div>
-            <div class="author_item">
-                <img src="https://img9.doubanio.com/img/author/raw/public/1488991600.94.jpg">
-                <div class="author_short">
-                    <h6>三毛，台湾70至80年代的著名作家，</h6>
                 </div>
+                <div class="author_item">
+                    <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg" alt="img">
+                    <div class="author_short">
+                        <h6>三毛，台湾70至80年代的著名作家，</h6>
+                    </div>
 
-            </div>
-            <div class="author_item">
-                <img src="https://img9.doubanio.com/view/celebrity/raw/public/p3196.jpg">
-                <div class="author_short">
-                    <h6>金庸, 华人最知名的武侠小说作家、及新闻学家、企业家...</h6>
                 </div>
+                <div class="author_item">
+                    <img src="https://img1.doubanio.com/img/author/raw/public/1489462312.98.jpg" alt="img">
+                    <div class="author_short">
+                        <h6>金庸, 华人最知名的武侠小说作家、及新闻学家、企业家...</h6>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div></div>
+    </div>
 </template>
 
 <script>
@@ -171,7 +172,7 @@ export default {
     /* 距离顶部的距离 */
     /* right: 50px; */
     /* 距离右侧的距离 */
-    width: 70%;
+    width: 90%;
     height: 50%;
     /* background-color: black; */
 }
@@ -179,7 +180,7 @@ export default {
 .item {
     margin-top: 0;
     width: 25%;
-    height: 100%;
+    /* height: 100%; */
     /* 每列占据四分之一的宽度 */
     height: 50%;
     padding: 10px;
@@ -206,7 +207,7 @@ export default {
     height: 30%;
     text-align: center;
 
-    /* background-color: black; */
+     /*background-color: black;*/
 }
 
 /* img {
@@ -217,7 +218,7 @@ export default {
 .recommend_one {
     flex: 1;
     width: 20%;
-    padding-right: 50px;
+    padding-right: 70px;
     font-size: smaller;
 }
 
@@ -225,10 +226,10 @@ export default {
     width: 35%;
     height: 20%;
     flex: 4;
-    /* background-color: black; */
+    /*background-color: black;*/
 }
 
-.container {
+.container_home {
     display: flex;
     width: 60%;
     padding-left: 250px;
@@ -246,15 +247,23 @@ export default {
 }
 
 .product-thumb img {
-    width: 100%;
-    /* 设置图片宽度为容器宽度的百分之百 */
-    height: 100%;
-    /* 设置图片高度为容器高度的百分之百 */
-    /* object-fit: contain; */
-    /* 控制图片在容器内的显示方式 */
-    transform-origin: top left;
-    object-fit: cover;
+    width: 130px;
+    height: 170px;
+}
 
+.product-thumb-one {
+    margin-top: 0;
+    width: 100%;
+    height: 70%;
+}
+
+.product-thumb-one img {
+    width: 180px;
+    height: 250px;
+}
+
+.product-one-content {
+    width: 180px;
 }
 
 h1 {
@@ -276,7 +285,7 @@ h1 {
 }
 
 .author_item img {
-    width: 150px;
+    width: 180px;
     height: 200px;
     padding-right: 50px;
 }
