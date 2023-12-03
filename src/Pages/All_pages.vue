@@ -1,6 +1,5 @@
 <template>
-
-  <div id="app">
+  <div id="app" class="body_set">
     <div class="container_main">
       <nav class="fixed-nav">
         <ul>
@@ -16,15 +15,18 @@
             <router-link class="link" to="/admin/author">Authors</router-link>
           </li>
           <li><router-link class="link" to="/admin/self">Self</router-link></li>
-            <li><router-link class="link" to="/admin/help">Help</router-link></li>
-            <li><router-link class="link" to="/login">LogOut</router-link></li>
+          <li><router-link class="link" to="/admin/help">Help</router-link></li>
+          <li><router-link class="link" to="/login">LogOut</router-link></li>
         </ul>
       </nav>
       <router-link to="/admin/self"
-        ><img class="avatar" src="../../src/images/blue_cloud.jpg" alt="Avatar"
+        ><img class="avatar" src="../images/blue_cloud.jpg" alt="Avatar"
       /></router-link>
     </div>
     <router-view class="router-view" />
+    <footer class="footer">
+      <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
   </div>
 </template>
 
@@ -112,6 +114,23 @@ nav ul li:hover::after {
   top: 50%;
   opacity: 1;
 }
+.body_set {
+  background-image: linear-gradient(
+    to right,
+    #b8cbb8 0%,
+    #b6f1e0 0%,
+    #7de3db 0%,
+    #80b8f6 33%,
+    #8da2dc 66%,
+    #a9afd9 100%
+  );
+}
+.footer {
+    background: #afeefe;
+    text-align: center;
+    padding: 20px;
+    color: #777777;
+    font-size: 14px;
+}
 </style>
-<script setup>
-</script>
+<script setup></script>
