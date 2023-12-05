@@ -1,24 +1,12 @@
 <template>
-    <div>
-        <div id="swiper" class="swiper_top">
-            <div id="box">
-                <!-- 设定一次只显示一张图片 -->
-                <img :src="imgSrc[currentIndex]" alt="img">
-            </div>
-            <div id="span">
-                <!-- 每有一张图片,底部添加一个按钮,点击可切换 -->
-                <span :key="index" v-for="(item,index) in imgSrc" v-on:click="currentIndexClick(index)"
-                      :style="{backgroundColor:currentIndex === index ? '#bbbbbb' : ''}"></span>
-            </div>
-            <!-- 左右侧的按钮 -->
-            <div id="leftSide" v-on:click="leftClick">
-                <i class="el-icon-back"></i>
-            </div>
-            <div id="rightSide" v-on:click="rightClick">
-                <i class="el-icon-right"></i>
-            </div>
+    <div class="page_all">
+        <div class="swiper">
+            <el-carousel :interval="5000" type="card"  >
+                <el-carousel-item v-for="item in imgSrc" >
+                    <el-image :src="item" class="top_image" />
+                </el-carousel-item>
+            </el-carousel>
         </div>
-
 
         <div class="main_page">
             <div class="recommend_book_author">
@@ -68,7 +56,7 @@
                     </div>
                 </div>
                 <div class="author_introduction">
-                    <h2>著名作家</h2>
+                    <h1>著名作家</h1>
                     <div class="authors">
                         <div v-for="author in authors" :key="author.name" class="author_item">
                             <div class="card-image">
@@ -104,7 +92,27 @@
                 </div>
             </div>
         </div>
-
+        <div class="shop_page">
+            <div slot="header" class="header">
+                <h1>热销书籍</h1>
+            </div>
+            <el-row class="shop_row">
+<!--                一共24个单位 5代表每一个item分5个单位-->
+                <el-col :span="5" v-for="book in books" :key="book.id" class="shop_book_container">
+                    <el-image :src="book.imageSrc" class="shop_image"/>
+                    <div style="padding: 14px;" >
+                        <span id="shop_book_price">￥ {{book.price.toFixed(2)}}</span>
+                        <span id="shop_book_title">{{book.title}}</span>
+                        <span id="shop_book_description">{{book.description}}</span>
+                        <div id="actions">
+                            <el-button icon="el-icon-money"  circle></el-button>
+                            <el-button icon="el-icon-s-goods" circle></el-button>
+                            <el-button icon="el-icon-star-on" circle></el-button>
+                        </div>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
 
 
     </div>
@@ -131,42 +139,49 @@ export default {
             books: [
                 {
                     title: "红楼梦",
+                    price: 11,
                     author: "[清]曹雪芹著",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s1076932.jpg",
                     description: "都云作者痴，谁解其中味？"
                 },
                 {
                     title: "三国演义",
+                    price: 12,
                     author: "[明]罗贯中著",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s1532272.jpg",
                     description: "是非成败转头空"
                 },
                 {
                     title: "百年孤独",
+                    price: 13,
                     author: "[哥伦比亚]加西亚·马尔克斯",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s6384945.jpg",
                     description: "魔幻现实主义文学代表作"
                 },
                 {
                     title: "飘",
+                    price: 14,
                     author: "[美国]玛格丽特·米切尔",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s2881231.jpg",
                     description: "革命时期的爱情，随风而逝"
                 },
                 {
                     title: "动物农场",
+                    price: 15,
                     author: "[英]乔治·奥威尔",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s5816598.jpg",
                     description: "太阳底下并无新事"
                 },
                 {
                     title: "白夜行",
+                    price: 16,
                     author: "[日]东野圭吾",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s4610502.jpg",
                     description: "一宗离奇命案牵出跨度近20年步步惊心的故事"
                 },
                 {
                     title: "小王子",
+                    price: 17,
                     author: "[法]圣埃克苏佩里",
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s1237549.jpg",
                     description: "献给长成了大人的孩子们"
@@ -174,6 +189,7 @@ export default {
                 {
                     title: "呐喊",
                     author: "鲁迅著",
+                    price: 18,
                     imageSrc: "https://img2.doubanio.com/view/subject/l/public/s1076932.jpg",
                     description: "新文学的第一声呐喊"
                 }
@@ -241,53 +257,110 @@ export default {
             ]
         }
     },
-    methods: {
-        // 点击底部按钮,切换
-        currentIndexClick: function(index) {
-            this.currentIndex = index
-            clearInterval(this.timer)
-            this.swiperStart()
-        },
-        // 计时器开启
-        swiperStart: function () {
-            this.timer = setInterval(() => {
-                this.currentIndex = this.currentIndex + 1
-            },3000)
-        },
-        // 左右按钮点击
-        leftClick:function () {
-            this.currentIndex--
-            if (this.currentIndex === -1) {
-                this.currentIndex = this.imgSrc.length - 1
-            }
-            clearInterval(this.timer)
-            this.swiperStart()
-        },
-        rightClick:function () {
-            this.currentIndex++
-            clearInterval(this.timer)
-            this.swiperStart()
-        }
-    },
-    // 在 vue 生命周期 mounted 的时候调用方法
-    mounted() {
-        this.swiperStart()
-    },
-    // 检测 currentIndex 改变后是否越界
-    watch: {
-        currentIndex:function () {
-            if (this.currentIndex === this.imgSrc.length) {
-                this.currentIndex = 0
-            }
-        }
-    }
+
 }
 </script>
 <style scoped>
 
+.page_all {
+    background: #fff url(../images/rank_back.png);
+}
+
+.shop_page {
+    height: 35%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.shop_image {
+    width: 200px;
+    height: 300px;
+}
+
+#shop_book_price {
+    font-family: Arial, serif;
+    font-size: 18px;
+    font-weight: bolder;
+    color: #d44d44;
+    display: block;
+}
+
+#shop_book_title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 8px;
+    color: #333;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 5px 0 10px 0;
+    display: block;
+}
+
+#shop_book_description {
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+#actions {
+    padding: 10px 10px 0 0;
+}
+
+.shop_book_container {
+    /*padding: 20px 0;*/
+    border: 1px solid #fff;
+    transition: .2s;
+    margin-bottom: 20px;
+    margin-right: 3%;
+    /*background-color: black;*/
+    padding: 2%;
+}
+
+.shop_book_container:hover {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.shop_row {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 2%;
+    background-color: white;
+    padding-left: 5%;
+}
+
+
+.top_image {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    /*background-color: black;*/
+}
+.swiper {
+    position: relative;
+    width: 80%;
+    height: 35%;
+    margin-left: 10%;
+    /*background-color: black;*/
+}
+/* 走马灯样式 */
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+}
+
 .main_page {
     display: flex;
-    background: #fff url(../images/rank_back.png);
 }
 .product-items {
     display: flex;
@@ -370,9 +443,10 @@ export default {
     width: 80%;
     margin-left: 12%;
     margin-top: 20px;
+    background-color: white;
      /*background-color: black;*/
     /*border: 2px solid #ccc;*/
-    /*border-radius: 15px;*/
+    border-radius: 15px;
 }
 
 .product-thumb {
@@ -423,20 +497,20 @@ h3 {
     height: 45%;
     padding-left: 12%;
     padding-top: 5%;
-    /*background-color: black;*/
+    /*background-color: white;*/
 }
 
 .authors {
     display: flex;
     justify-content: space-between;
     height: 80%;
-    width: 85%;
+    width: 91%;
     margin-top: 20px;
     margin-bottom: 3%;
-    margin-right: 50%;
+    /*margin-right: 30%;*/
     /*transition: 1s;*/
-
-     /*background-color: black;*/
+    border-radius: 15px;
+    background-color: white;
 }
 
 
@@ -451,75 +525,76 @@ h3 {
 }
 
 
-#swiper {
-    width: 99vw;
-    height: 45vh;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    /*margin-left: 10vw;*/
-}
+/*#swiper {*/
+/*    width: 70vw;*/
+/*    height: 45vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    margin-left: 15vw;*/
+/*    !*margin-left: 10vw;*!*/
+/*}*/
 
-#box {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-}
+/*#box {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    display: flex;*/
+/*}*/
 
-.swiper_top img {
-    width: 100vw;
-    flex: 1;
-}
+/*.swiper_top img {*/
+/*    width: 100vw;*/
+/*    flex: 1;*/
+/*}*/
 
-#span {
-    position: absolute;
-    bottom: 10px;
-    height: 8px;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
+/*#span {*/
+/*    position: absolute;*/
+/*    bottom: 10px;*/
+/*    height: 8px;*/
+/*    width: 100vw;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 
-.swiper_top span {
-    padding: 0 10px;
-    margin: 0 10px;
-    background-color: rgba(95, 95, 95, 0.7);
-    border-radius: 6px;
-}
+/*.swiper_top span {*/
+/*    padding: 0 10px;*/
+/*    margin: 0 10px;*/
+/*    background-color: rgba(95, 95, 95, 0.7);*/
+/*    border-radius: 6px;*/
+/*}*/
 
-#leftSide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) translateX(15%);
-    left: 10px;
-    padding: 15px;
-    background: rgba(95, 95, 95, 0.7);
-    border-radius: 6px;
-    opacity: 0.1;
-    transition: 0.5s;
-}
-#leftSide:hover,#rightSide:hover {
-    transition: 0.5s;
-    opacity: 1;
-}
+/*#leftSide {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%) translateX(15%);*/
+/*    left: 10px;*/
+/*    padding: 15px;*/
+/*    background: rgba(95, 95, 95, 0.7);*/
+/*    border-radius: 6px;*/
+/*    opacity: 0.1;*/
+/*    transition: 0.5s;*/
+/*}*/
+/*#leftSide:hover,#rightSide:hover {*/
+/*    transition: 0.5s;*/
+/*    opacity: 1;*/
+/*}*/
 
-#rightSide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) translateX(-15%);
-    right: 10px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    opacity: 0.1;
-}
-i {
-    color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
+/*#rightSide {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    transform: translateY(-50%) translateX(-15%);*/
+/*    right: 10px;*/
+/*    padding: 15px;*/
+/*    background: rgba(0, 0, 0, 0.3);*/
+/*    border-radius: 6px;*/
+/*    opacity: 0.1;*/
+/*}*/
+/*i {*/
+/*    color: rgba(0, 0, 0, 0.7);*/
+/*    z-index: 1;*/
+/*}*/
 
 
 .flip-card-inner {
