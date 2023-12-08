@@ -11,6 +11,8 @@ import Calendar_self from "@/Pages/Calendar_self.vue";
 import Menu from "@/components/Menu.vue";
 import Sayings from "@/Pages/Sayings.vue";
 import Library from "@/Pages/Library.vue";
+import Review from "@/Pages/Review.vue";
+import Introduction from "@/Pages/Introduction.vue";
 
 
 Vue.use(VueRouter)
@@ -20,6 +22,11 @@ const routes = [
     path: '/',
     component: Login,
     redirect: '/login'
+  },
+  {
+    path: '/introduction',
+    name: Introduction,
+    component: Introduction,
   },
   {
     path: '/home',

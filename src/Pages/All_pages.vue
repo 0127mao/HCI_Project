@@ -126,11 +126,11 @@ nav ul li:hover::after {
   );
 }
 .footer {
-    background: #afeefe;
-    text-align: center;
-    padding: 20px;
-    color: #777777;
-    font-size: 14px;
+  background: #afeefe;
+  text-align: center;
+  padding: 20px;
+  color: #777777;
+  font-size: 14px;
 }
 </style>
 <script setup></script>

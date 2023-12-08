@@ -81,8 +81,9 @@
     <br />
     <Author_table />
     <button v-if="btnFlag" class="back-to-top" @click="backTop">ToTop</button>
-      <router-link to="/Sayings"><button class="Sayings">Says</button></router-link>
-
+    <router-link to="/Sayings"
+      ><button class="Sayings">Says</button></router-link
+    >
   </div>
 </template>
 
@@ -91,7 +92,7 @@ import Calendar_self from "@/Pages/Calendar_self.vue";
 import Turn_picture from "@/Pages/Turn_picture.vue";
 import Author_table from "@/Pages/Author_table.vue";
 export default {
-  components: { Author_table, Turn_picture, Calendar_self},
+  components: { Author_table, Turn_picture, Calendar_self },
   data() {
     return {
       btnFlag: false,
@@ -230,17 +231,17 @@ export default {
   font-size: 40px;
   color: #afeefe;
 }
-.Sayings{
-    position: fixed;
-    bottom: 15vh;
-    right: 8vh;
-    z-index: 100; /* 按钮样式规则 */
-    width: 5vh; /* 设置按钮宽度 */
-    height: 5vh; /* 设置按钮高度 */
-    border-radius: 50%; /* 将按钮的边框半径设置为50%，使其呈现圆形 */
-    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+.Sayings {
+  position: fixed;
+  bottom: 15vh;
+  right: 8vh;
+  z-index: 100; /* 按钮样式规则 */
+  width: 5vh; /* 设置按钮宽度 */
+  height: 5vh; /* 设置按钮高度 */
+  border-radius: 50%; /* 将按钮的边框半径设置为50%，使其呈现圆形 */
+  box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
     0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
-    background-color: var(--white); /* 使用变量设置背景颜色 */
-    border: none;
+  background-color: var(--white); /* 使用变量设置背景颜色 */
+  border: none;
 }
 </style>
