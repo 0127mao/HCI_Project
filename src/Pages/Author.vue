@@ -79,7 +79,7 @@
     <br />
     <div class="divider_line"><div class="text_next">作家专区</div></div>
     <br />
-    <Author_table />
+    <Author_table/>
     <button v-if="btnFlag" class="back-to-top" @click="backTop">ToTop</button>
     <router-link to="/Sayings"
       ><button class="Sayings">Says</button></router-link
@@ -92,7 +92,7 @@ import Calendar_self from "@/Pages/Calendar_self.vue";
 import Turn_picture from "@/Pages/Turn_picture.vue";
 import Author_table from "@/Pages/Author_table.vue";
 export default {
-  components: { Author_table, Turn_picture, Calendar_self },
+  components: { Author_table, Turn_picture, Calendar_self},
   data() {
     return {
       btnFlag: false,

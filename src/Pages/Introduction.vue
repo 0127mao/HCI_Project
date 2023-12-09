@@ -1,5 +1,6 @@
 <template>
     <div class="introduction">
+    <div class="up">
         <div class="header">
             <div class="left">
                 <button class="left-button">
@@ -23,7 +24,10 @@
         </div>
         <div class="review-wrapper">
             <Review />
-        </div>
+        </div></div>
+        <footer class="footer">
+            <p>&copy; 2023 Your Website. All rights reserved.</p>
+        </footer>
     </div>
 </template>
 
@@ -47,10 +51,17 @@ export default {
 <style scoped>
 .introduction {
     background-image: url("../images/3.png");
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 .block{
     margin-top: 10px;
+}
+.up{
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 .el-carousel__item h3 {
     color: #475669;
@@ -139,5 +150,14 @@ export default {
 
 .fa-chevron-left {
     color: #475669;
+}
+.footer {
+    background: #afeefe;
+    text-align: center;
+    padding-bottom: 20px;
+    color: #777777;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: auto
 }
 </style>

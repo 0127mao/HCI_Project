@@ -3,16 +3,14 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from "@/Pages/Login.vue";
 import All_pages from "@/Pages/All_pages.vue";
-import AboutView from "@/views/AboutView.vue";
 import Author from "@/Pages/Author.vue";
 import Self from "@/Pages/Self.vue";
 import Help from "@/Pages/Help.vue";
-import Calendar_self from "@/Pages/Calendar_self.vue";
 import Menu from "@/components/Menu.vue";
 import Sayings from "@/Pages/Sayings.vue";
 import Library from "@/Pages/Library.vue";
-import Review from "@/Pages/Review.vue";
 import Introduction from "@/Pages/Introduction.vue";
+
 
 
 Vue.use(VueRouter)
@@ -42,11 +40,6 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
-  },
-  {
-    path: '/test',
-    name: 'test',
-    component: Calendar_self
   },
   {
     path: '/Menu',

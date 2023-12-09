@@ -97,7 +97,7 @@
                 <h1>热销书籍</h1>
             </div>
             <el-row class="shop_row">
-<!--                一共24个单位 5代表每一个item分5个单位-->
+                <!--                一共24个单位 5代表每一个item分5个单位-->
                 <el-col :span="5" v-for="book in books" :key="book.id" class="shop_book_container">
                     <el-image :src="book.imageSrc" class="shop_image"/>
                     <div style="padding: 14px;" >
@@ -124,14 +124,14 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  },
+    name: 'HomeView',
+    components: {
+        HelloWorld
+    },
     data: function () {
         return {
             // 这里需要 require 引入照片,不然的话是加载不到图片的
-            imgSrc: [require('../images/poster1.png'), require('../images/poster2.png'),require('../images/poster2.png')],
+            imgSrc: [require('../images/01.png'), require('../images/02.png'),require('../images/02.png')],
             // 当前照片序号
             currentIndex: 0,
             // 定时器的统一管理
@@ -225,7 +225,7 @@ export default {
                     intro: "《红楼梦》是一部百科全书式的长篇小说。以宝黛爱情悲剧为主线，以四大家族的荣辱兴衰为背景，描绘出18世纪中国封建社会的方方面面，以及封建专制下新兴资本主义民主思想的萌动。结构宏大、情节委婉、细节精致，人物形象栩栩如生，声口毕现，堪称中国古代小说中的经典。",
                     image: "https://img2.doubanio.com/view/subject/l/public/s1076932.jpg"
                 },
-            // 可以添加更多书籍数据
+                // 可以添加更多书籍数据
             ],
             authors: [
                 {
@@ -263,7 +263,7 @@ export default {
 <style scoped>
 
 .page_all {
-    background: #fff url(../images/rank_back.png);
+    background: #fff url(../images/01.png);
 }
 
 .shop_page {
@@ -407,7 +407,7 @@ export default {
     height: 30%;
     text-align: center;
 
-     /*background-color: black;*/
+    /*background-color: black;*/
 }
 
 /* img {
@@ -444,7 +444,7 @@ export default {
     margin-left: 12%;
     margin-top: 20px;
     background-color: white;
-     /*background-color: black;*/
+    /*background-color: black;*/
     /*border: 2px solid #ccc;*/
     border-radius: 15px;
 }
@@ -455,7 +455,7 @@ export default {
     height: 170px;
     overflow: hidden;
     /* 防止图片溢出容器 */
-     background-color: black;
+    background-color: black;
 }
 
 .product-thumb img {
@@ -636,7 +636,7 @@ h3 {
 
 .rank_books {
     /*background-color: red;*/
-    background: #fff url(../images/rank_back.png);
+    background: #fff url(../images/01.png);
     flex: 2;
     padding-top: 2%;
     padding-left: 2%;
