@@ -1,9 +1,13 @@
-<template></template>
-
-<script>
-export default {
-  name: "Self",
-};
+<script setup>
+import PersonInfo from '@/components/person/PersonInfo.vue';
 </script>
 
-<style scoped></style>
+<template>
+    <div>
+        <PersonInfo></PersonInfo>
+    </div>
+</template>
+
+<style scoped>
+</style>
+
