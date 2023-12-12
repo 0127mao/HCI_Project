@@ -15,7 +15,6 @@
                     <template #interactions>
                         <vs-button class="btn-chat" shadow primary>
                             <i class="el-icon-chat-line-square"></i>
-
                             <router-link class="review_link" to="/introduction"
                             ><span class="span"> 54 </span></router-link
                             >

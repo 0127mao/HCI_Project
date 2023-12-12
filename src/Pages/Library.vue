@@ -5,15 +5,8 @@ import Radio from "@/components/library/Radio.vue";
 
 <template>
   <div>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        margin-left: 250px;
-        margin-right: 250px;
-      "
-    >
-      <Radio></Radio>
+    <div style="display: flex;flex-direction: column;margin-left: 250px;margin-right: 250px;">
+      <!-- <Radio></Radio> -->
       <Content></Content>
       <div>
         <el-backtop

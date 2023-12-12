@@ -3,20 +3,24 @@
     <div class="container_main">
       <nav class="fixed-nav">
         <ul>
-          <li>
-            <router-link class="link" to="/admin/overview"
-              >Overview</router-link
-            >
+          <li :class="{ 'active': $route.path === '/admin/overview' }">
+            <router-link class="link" to="/admin/overview">首页</router-link>
           </li>
-          <li>
-            <router-link class="link" to="/admin/library">Library</router-link>
+          <li :class="{ 'active': $route.path === '/admin/library' }">
+            <router-link class="link" to="/admin/library">书城</router-link>
           </li>
-          <li>
-            <router-link class="link" to="/admin/author">Authors</router-link>
+          <li :class="{ 'active': $route.path === '/admin/author' }">
+            <router-link class="link" to="/admin/author">作家专区</router-link>
           </li>
-          <li><router-link class="link" to="/admin/self">Self</router-link></li>
-          <li><router-link class="link" to="/admin/help">Help</router-link></li>
-          <li><router-link class="link" to="/login">LogOut</router-link></li>
+          <li :class="{ 'active': $route.path === '/admin/self' }">
+            <router-link class="link" to="/admin/self">个人</router-link>
+          </li>
+          <li :class="{ 'active': $route.path === '/admin/help' }">
+            <router-link class="link" to="/admin/help">帮助</router-link>
+          </li>
+          <li :class="{ 'active': $route.path === '/login' }">
+            <router-link class="link" to="/login">登出</router-link>
+          </li>
         </ul>
       </nav>
       <router-link to="/admin/self"
@@ -48,7 +52,7 @@
   padding-top: 10vh;
 }
 .container_main {
-  background-image: url("../../src/images/3.png");
+  background-image: url("../../src/images/blue_cloud.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -61,14 +65,23 @@
   z-index: 999;
 }
 nav {
-  background: #afeefe;
+  /* background: #afeefe;
   border-radius: 50px;
   padding: 10px;
-  box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4); */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+nav ul li.active {
+  color: #ffffff;
+}
+nav ul li.active::after {
+  top: 50%;
+  opacity: 1;
+}
+
 ul {
   display: flex;
   align-items: center;
@@ -94,7 +107,7 @@ nav ul li {
 
 nav ul li::after {
   content: "";
-  background: #2ca8ff;
+  background: #82bde7;
   width: 100%;
   height: 100%;
   border-radius: 30px;

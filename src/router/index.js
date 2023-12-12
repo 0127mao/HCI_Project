@@ -6,7 +6,6 @@ import All_pages from "@/Pages/All_pages.vue";
 import Author from "@/Pages/Author.vue";
 import Self from "@/Pages/Self.vue";
 import Help from "@/Pages/Help.vue";
-import Menu from "@/components/Menu.vue";
 import Sayings from "@/Pages/Sayings.vue";
 import Library from "@/Pages/Library.vue";
 import Introduction from "@/Pages/Introduction.vue";
@@ -40,11 +39,6 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
-  },
-  {
-    path: '/Menu',
-    name: 'menu',
-    component: Menu
   },
   {
     path: '/about',
